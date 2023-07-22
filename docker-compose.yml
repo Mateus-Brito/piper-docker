@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  api:
+    stdin_open: true
+    tty: true
+    build: ./projects/piper-api
+    volumes:
+      - ./projects/piper-api:/piper-api
+      - ./projects/piper-voices:/piper-voices
+    env_file:
+      - ./projects/piper-api/.env
+    environment:
+      PIPER_VOICES_PATH: /piper-voices
+    ports:
+      - "5000:5000"

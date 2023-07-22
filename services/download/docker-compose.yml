@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  download:
+    build: .
+    volumes:
+      - ../../projects:/projects
